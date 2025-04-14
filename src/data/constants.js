@@ -8,7 +8,7 @@ export const Bio = {
         "Highly skilled Full Stack Web Developer with extensive experience creating and optimizing efficient and user-friendly websites. I am adept at collaborating with cross-functional teams to deliver high-quality projects on time, seeking new opportunities to utilize my expertise and contibute to the success of your next project.",
     github: "https://github.com/SunnyMondal53778",
     resume:
-        "https://drive.google.com/file/d/1uudGAEdm7WusTY3NUtdgyEcPtX3Ls7xP/view?usp=sharing",
+        "https://drive.google.com/file/d/1lUg-3BAaLfNuYZ4PIVoaxu-gUH4DgmyR/view?usp=drive_link",
     linkedin: "https://www.linkedin.com/in/sunny-mondal-b1a7a3183/",
     twitter: "https://twitter.com/Sunny__Mondal",
     insta: "https://www.instagram.com/sunnymondal_official/",
