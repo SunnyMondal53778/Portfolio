@@ -1,3 +1,4 @@
+// src/utils/Theme.js
 export const darkTheme = {
     bg: "#1C1C27",
     bgLight: "#1C1E27",
@@ -18,5 +19,8 @@ export const lightTheme = {
     text_primary: "#111111",
     text_secondary: "#48494a",
     card: "#FFFFFF",
-    button: "#5c5b5b",
+    card_light: '#F8F8F8',
+    button: "#be1adb",
+    white: "#FFFFFF",
+    black: "#000000",
 }

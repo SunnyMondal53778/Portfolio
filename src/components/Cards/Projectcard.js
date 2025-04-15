@@ -73,7 +73,7 @@ const Date = styled.div`
 font-size: 12px;
 font-weight: 400;
 margin-left: 2px;
-color: ${({ theme }) => theme.text_secondary+80};
+color: ${({ theme }) => theme.text_secondary + 80};
 
 @media (max-width){
   font-size: 10px;
@@ -105,25 +105,57 @@ border-radius: 50%;
 margin-left: -10px;
 `;
 
-const Projectcard = ({project}) => {
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  margin-bottom: 12px;
+  padding: 0 8px;
+`;
+
+const Button = styled.a`
+  width: 45%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.primary};
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1.5px solid ${({ theme }) => theme.primary};
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.white};
+  }
+`;
+
+const Projectcard = ({ project }) => {
   return (
     <Card>
-        <Image src={project.image}/>
-        <Tags>
-            {project.tags.map((tag) => (
-                <Tag key={tag}>{tag}</Tag>
-            ))}
-        </Tags>
-        <Details>
-          <Title>{project.title}</Title>
-          <Date>{project.date}</Date>
-          <Description>{project.description}</Description>
-        </Details>
-        <Members>
-          {project.member?.map((member) => (
-            <Avatar src={member.img} />
-          ))}
-        </Members>
+      <Image src={project.image} />
+      <Tags>
+        {project.tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </Tags>
+      <Details>
+        <Title>{project.title}</Title>
+        <Date>{project.date}</Date>
+        <Description>{project.description}</Description>
+      </Details>
+      <Members>
+        {project.member?.map((member) => (
+          <Avatar src={member.img} />
+        ))}
+      </Members>
+      <ButtonContainer>
+        <Button href={project.github} target="_blank">Github</Button>
+        <Button href={project.webapp} target="_blank">Live Demo</Button>
+      </ButtonContainer>
     </Card>
   )
 }

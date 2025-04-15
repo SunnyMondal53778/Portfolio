@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Bio} from '../../data/constants'
+import { Bio } from '../../data/constants'
 import Typewriter from 'typewriter-effect'
 import HeroImg from '../../images/HeroImage.jpeg'
 import HeroBgAnimation from '../HeroBgAnimation'
 
 const HeroContainer = styled.div`
-background-color: ${({ theme}) => theme.card_light};
+background-color: ${({ theme }) => theme.card_light};
 display: flex;
 justify-content: center;
 position: relative;
@@ -24,25 +24,16 @@ z-index: 1;
 clip-path: polygon(0 0,100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
 const HeroBg = styled.div`
-position: absolute;
-display: flex;
-justify-content: end;
-top: 50%;
-right: 0;
-bottom: 50%;
-left: 50%;
-overflow: hidden;
-width: 70%;
-height: 100%;
-z-index: -1;
--webkit-transform: translateX(-50%) translateY(-50%);
-transform: translateX(-50%) translateY(-50%);
-
-@media screen and (max-width: 960px){
-  padding: 0 0px;
-  justify-content: center;
-}
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  
+  // No need for flex positioning here anymore
+  // The Div component will handle its own positioning
 `;
 
 const HeroInnerContainer = styled.div`
@@ -77,21 +68,25 @@ order: 1;
 `;
 
 const HeroRightContainer = styled.div`
-width: 100%;
-order: 2;
-display: flex;
-justify-content: end;
-gap: 12px;
-@media screen and (max-width: 960px) {
-  order: 1;
-  justify-content: center;
+  width: 100%;
+  order: 2;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  margin-bottom: 80px;
-}
-@media screen and (max-width: 640px) {
-  order: 1;
-  margin-bottom: 30px;
-}
+  position: relative;
+  gap: 12px;
+
+  @media screen and (max-width: 960px) {
+    order: 1;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  @media screen and (max-width: 640px) {
+    order: 1;
+    margin-bottom: 30px;
+  }
 `;
 const Title = styled.div`
 font-size: 50px;
@@ -185,22 +180,23 @@ const ResumeButton = styled.a`
 `;
 
 const Image = styled.img`
-width: 100%;
-position: realtive;
-border-radius: 50%;
-max-width: 400px;
-max-height: 400px;
-object-fit: cover;
-object-position: center;
+  position: relative;
+  border-radius: 50%;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
 
-@media screen and (max-width: 768px) {
-  max-width: 400px;
-  max-height: 400px;
-}
-@media screen and (max-width: 640px) {
-  max-width: 280px;
-  max-height: 280px;
-}
+  @media screen and (max-width: 768px) {
+    width: 400px;
+    height: 400px;
+  }
+
+  @media screen and (max-width: 640px) {
+    width: 280px;
+    height: 280px;
+  }
 `;
 
 
@@ -209,11 +205,11 @@ const Hero = () => {
     <div id='about'>
       <HeroContainer>
         <HeroBg>
-          <HeroBgAnimation/>
+          <HeroBgAnimation />
         </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
-            <Title>Hi, I am<br/>{Bio.name} </Title>
+            <Title>Hi, I am<br />{Bio.name} </Title>
             <TextLoop>I am a <Span><Typewriter options={{
               strings: Bio.roles,
               autoStart: true,
@@ -226,7 +222,7 @@ const Hero = () => {
             <ResumeButton href={Bio.resume} target="display">Check Resume</ResumeButton>
           </HeroLeftContainer>
           <HeroRightContainer>
-            <Image src ={HeroImg} alt="Hero" />
+            <Image src={HeroImg} alt="Hero" />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
