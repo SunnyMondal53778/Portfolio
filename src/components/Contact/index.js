@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components'
-import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Snackbar } from '@mui/material';
+import { Snackbar, Alert } from '@mui/material';
 
 const Container = styled.div`
 display: flex;
@@ -123,47 +122,105 @@ const ContactButton = styled.input`
 
 
 const Contact = () => {
+  const form = useRef();
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [status, setStatus] = useState({
+    type: 'success',
+    message: ''
+  });
 
-    //hooks
-    const [open, setOpen] = React.useState(false);
-    const form = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        emailjs.sendForm('service_tox7kqs', 'template_nv7k7mj', form.current, 'SybVGsYS52j2TfLbi')
-            .then((result) => {
-                setOpen(true);
-                form.current.reset();
-            }, (error) => {
-                console.log(error.text);
-            });
-    }
-
-
-
-    return (
-        <Container>
-            <Wrapper>
-                <Title>Contact</Title>
-                <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
-                <ContactForm ref={form} onSubmit={handleSubmit}>
-                    <ContactTitle>Email Me 🚀</ContactTitle>
-                    <ContactInput placeholder="Your Email" name="from_email" />
-                    <ContactInput placeholder="Your Name" name="from_name" />
-                    <ContactInput placeholder="Subject" name="subject" />
-                    <ContactInputMessage placeholder="Message" rows="4" name="message" />
-                    <ContactButton type="submit" value="Send" />
-                </ContactForm>
-                <Snackbar
-                    open={open}
-                    autoHideDuration={6000}
-                    onClose={() => setOpen(false)}
-                    message="Email sent successfully!"
-                    severity="success"
-                />
-            </Wrapper>
-        </Container>
+    emailjs.sendForm(
+      'service_y5p3fzs', // replace with your EmailJS service ID
+      'template_1e3uk3d', // replace with your EmailJS template ID
+      form.current,
+      'ommidSqET1FGWZSyf' // replace with your EmailJS public key
     )
-}
+      .then((result) => {
+        setStatus({
+          type: 'success',
+          message: 'Message sent successfully!'
+        });
+        form.current.reset();
+      })
+      .catch((error) => {
+        setStatus({
+          type: 'error',
+          message: 'Failed to send message. Please try again.'
+        });
+      })
+      .finally(() => {
+        setLoading(true);
+        setOpen(true);
+      });
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+
+  return (
+    <Container>
+      <Wrapper>
+        <Title>Contact</Title>
+        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+        <ContactForm ref={form} onSubmit={handleSubmit}>
+          <ContactTitle>Email Me 🚀</ContactTitle>
+          <ContactInput
+            placeholder="Your Email"
+            name="user_email"
+            type="email"
+            required
+          />
+          <ContactInput
+            placeholder="Your Name"
+            name="user_name"
+            type="text"
+            required
+          />
+          <ContactInput
+            placeholder="Subject"
+            name="subject"
+            type="text"
+            required
+          />
+          <ContactInputMessage
+            placeholder="Message"
+            rows="4"
+            name="message"
+            required
+          />
+          <ContactButton
+            type="submit"
+            value={loading ? "Sending..." : "Send"}
+            disabled={loading}
+          />
+        </ContactForm>
+        <Snackbar
+          open={open}
+          autoHideDuration={6000}
+          onClose={handleClose}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        >
+          <Alert
+            onClose={handleClose}
+            severity={status.type}
+            sx={{ width: '100%' }}
+          >
+            {status.message}
+          </Alert>
+        </Snackbar>
+      </Wrapper>
+    </Container>
+  );
+};
+
 
 export default Contact
