@@ -220,8 +220,8 @@ export const projects = [
             "JavaScript",
         ],
         category: "web app",
-        github: "https://github.com/SunnyMondal53778/textutils",
-        webapp: "https://sunnymondal53778.github.io/textutils",
+        github: "https://github.com/SunnyMondal53778/TextTool",
+        webapp: "https://sunnymondal53778.github.io/TextTool/",
     },
     {
         id: 1,
@@ -250,7 +250,6 @@ export const projects = [
         image:"https://drive.google.com/file/d/1swBzG6Ko7OEgNGW4gdh6GkqS07NUdqo-/view",
         tags: [
             "React Js",
-            "MongoDb",
             "Node Js",
             "Express Js",
             "JavaScript",
@@ -267,8 +266,6 @@ export const projects = [
             "  Developed a real-time weather application using Node.js, Express, and the OpenWeatherMap API. Enableduserstosearchandviewcurrentweatherconditions, includingtemperature, humidity, andwindspeed, through a responsive and user- friendly interface.Enhanced performance and usability with efficient API handling and clean UI design",
         image:"https://drive.google.com/file/d/1swBzG6Ko7OEgNGW4gdh6GkqS07NUdqo-/view",
         tags: [
-            "React Js",
-            "MongoDb",
             "Node Js",
             "Express Js",
             "JavaScript",
@@ -285,8 +282,6 @@ export const projects = [
             "  A simple and intuitive To-Do List application built with HTML, CSS, and JavaScript. This app allows users to create, manage, and track their tasks efficiently. It features persistent storage using local storage, enabling users to retain their tasks even after refreshing the page. The app includes functionalities for adding, editing, and deleting tasks, as well as marking them as completed. The user interface is designed to be clean and user-friendly, ensuring a seamless experience for task management.",
         image:"https://private-user-images.githubusercontent.com/80062545/370814347-98886b59-6548-4f59-8190-702aaa1465de.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDQ3NDI4ODMsIm5iZiI6MTc0NDc0MjU4MywicGF0aCI6Ii84MDA2MjU0NS8zNzA4MTQzNDctOTg4ODZiNTktNjU0OC00ZjU5LTgxOTAtNzAyYWFhMTQ2NWRlLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA0MTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNDE1VDE4NDMwM1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk1MjA4OTQxMTQwYzA5ZDJiNGIwMTY4YzI5MjE5N2M0MmU1ODc1MWE3NTYwMjBiZWI5MmFlOTc5MWVhZTkzMTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.PJSvKeOQf0ZnL13uVctKMOh0FzzfWTA5VYFWVaMzb_E",
         tags: [
-            "React Js",
-            "MongoDb",
             "Node Js",
             "Express Js",
             "JavaScript",
@@ -303,8 +298,6 @@ export const projects = [
             " This is a Simple Quiz App built using HTML, CSS, and JavaScript. The app presents multiple-choice questions, tracks your score, and provides feedback on correct and incorrect answers. After completing the quiz, you can restart and play again. The app is designed to be user-friendly and responsive, ensuring a smooth experience across devices.",
         image:"",
         tags: [
-            "React Js",
-            "MongoDb",
             "Node Js",
             "Express Js",
             "JavaScript",
