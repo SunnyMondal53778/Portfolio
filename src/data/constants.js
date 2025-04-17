@@ -239,7 +239,7 @@ export const projects = [
         ],
         category: "web app",
         github: "https://github.com/SunnyMondal53778/DataFusion",
-        webapp: "https://sunnymondal53778.github.io/textutils",
+        webapp: "https://sunnymondal53778.github.io/DataFusion/",
     },
     {
         id: 2,
