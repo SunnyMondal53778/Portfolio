@@ -249,7 +249,6 @@ export const projects = [
             " iChat is a real-time chat application built using Node.js and Socket.io, designed to provide seamless and instant communication between users.It simulates a basic messaging app where multiple users can join a chatroom and exchange messages in real time.The project demonstrates the power of WebSockets for two - way communication, allowing real- time messaging without the need for page reloads or repeated server requests.",
         image:"https://drive.google.com/file/d/1swBzG6Ko7OEgNGW4gdh6GkqS07NUdqo-/view",
         tags: [
-            "React Js",
             "Node Js",
             "Express Js",
             "JavaScript",
